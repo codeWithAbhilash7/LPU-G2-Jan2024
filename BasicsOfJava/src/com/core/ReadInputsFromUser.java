@@ -60,7 +60,7 @@ public class ReadInputsFromUser {
 //		// String name = sc.next();		// delimiter is whitespace ( ) and/or newLine char (enter)
 //		String name = sc.nextLine();	// delimiter is newLine char (enter)
 //		System.out.println("Your name is " + name);
-		
+
 		// char -> next().charAt(0)
 //		System.out.print("Enter a character = ");
 //		char ch = sc.next().charAt(0);
