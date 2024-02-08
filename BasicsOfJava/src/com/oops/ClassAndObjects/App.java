@@ -24,11 +24,11 @@ public class App {
 //		System.out.println("Incresing speed by " + c2.accelarate(75));
 //		c2.drive();
 
-		Car c3 = new Car("Tata Punch", "White", FUEL_TYPE.DIESEL);
-		System.out.println(c3);
-		
-		Car c4 = new Car("Honda City", "Silver");
-		System.out.println(c4);
+//		Car c3 = new Car("Tata Punch", "White", FUEL_TYPE.DIESEL);
+//		System.out.println(c3);
+//		
+//		Car c4 = new Car("Honda City", "Silver");
+//		System.out.println(c4);
 //		if (c3.speed != 0) {
 //			System.out.println("Car is moving");
 //		} else {
@@ -40,6 +40,20 @@ public class App {
 //		} else {
 //			System.out.println("Car is not black in color");
 //		}
+
+		Dog d1 = new Dog("American Bulldog", "White");
+		System.out.println(d1);
+
+//		Dog d2 = new Dog("German Hound", "Black", 4);
+//		System.out.println(d2);
+//		
+//		Dog d3 = new Dog("Ryukyu");
+//		System.out.println(d3);
+		
+//		d1.age = -457;
+		d1.setAge(15);
+		
+		System.out.println(d1);
 
 	}
 
