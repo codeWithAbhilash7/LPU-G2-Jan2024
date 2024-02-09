@@ -1,4 +1,4 @@
-package com.oops.ClassAndObjects;
+package com.oops.classandobjects;
 
 public class Dog {
 	// data members / instance variables / properties of the class

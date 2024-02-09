@@ -1,4 +1,4 @@
-package com.oops.ClassAndObjects;
+package com.oops.classandobjects;
 
 public class App {
 

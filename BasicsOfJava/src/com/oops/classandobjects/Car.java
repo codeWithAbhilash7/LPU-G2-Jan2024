@@ -1,10 +1,11 @@
-package com.oops.ClassAndObjects;
-
-enum FUEL_TYPE {
-	NOT_DEFINED, PETROL, DIESEL, CNG, ELECTRIC
-}
+package com.oops.classandobjects;
 
 public class Car {
+
+	public enum FUEL_TYPE {
+		NOT_DEFINED, PETROL, DIESEL, CNG, ELECTRIC
+	}
+
 	// data member (properties of an entity)
 
 	// model number
@@ -20,7 +21,7 @@ public class Car {
 	int speed;
 
 	// default (parameterless) constructor
-	Car() {
+	public Car() {
 		this.model = "";
 		this.color = "";
 		this.fuelType = FUEL_TYPE.NOT_DEFINED;
@@ -30,14 +31,14 @@ public class Car {
 	// this --> data current object
 
 	// parameterized constructor
-	Car(String model, String color, FUEL_TYPE fuel) {
+	public Car(String model, String color, FUEL_TYPE fuel) {
 		this.speed = 0;
 		this.model = model;
 		this.color = color;
 		this.fuelType = fuel;
 	}
 
-	Car(String _model, String _color) {
+	public Car(String _model, String _color) {
 		this.speed = 0;
 		this.model = _model;
 		this.color = _color;
@@ -45,7 +46,7 @@ public class Car {
 	}
 
 	// Member functions (Behaviors)
-	void drive() {
+	public void drive() {
 		System.out.println(
 				"Model = " + model + "\tColor = " + color + "\tFuel Type = " + fuelType + "\tSpeed = " + speed);
 	}
@@ -54,7 +55,7 @@ public class Car {
 		return "Car [model=" + model + ", color=" + color + ", fuelType=" + fuelType + ", speed=" + speed + "]";
 	}
 
-	int accelarate(int incrementValue) {
+	public int accelarate(int incrementValue) {
 		for (int i = 0; i < incrementValue; i++) {
 			speed++;
 		}
