@@ -6,7 +6,21 @@ public class Student {
 
 	private static int count = 0;
 
+	// Initializer blocks
+	{
+		// this block will get called every time with new object creation (before the
+		// constructor)
+		System.out.println("Initializer block");
+	}
+
+	// static Initializer blocks
+	static {
+		// this block will get called ONLY ONCE (at the time of class loading)
+		System.out.println("static Initializer block");
+	}
+
 	public Student(int rollNumber, String name) {
+		System.out.println("Constructor");
 		this.name = name;
 		this.rollNumber = rollNumber;
 		count++;
@@ -52,9 +66,5 @@ public class Student {
 	public static int getCount() {
 		return count;
 	}
-	
-	
-	
-	
 
 }
