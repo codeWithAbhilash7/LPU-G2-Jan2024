@@ -2,15 +2,19 @@ package com.oops.inheritance;
 
 public class Person {
 	private String name;
-	private Address address; // aggregation/containment/composition
+	private String address;
 
-	public Person(String name) {
-		this(name, "", "");
+	Person() {
+		this("Undefined", "Undefined");
 	}
 
-	public Person(String name, String city, String state) {
+	Person(String name) {
+		this(name, "Undefined");
+	}
+
+	Person(String name, String address) {
 		this.name = name;
-		this.address = new Address(city, state);
+		this.address = address;
 	}
 
 	@Override
@@ -26,11 +30,11 @@ public class Person {
 		this.name = name;
 	}
 
-	public Address getAddress() {
+	public String getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
 

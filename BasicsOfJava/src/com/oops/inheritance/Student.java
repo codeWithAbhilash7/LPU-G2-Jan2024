@@ -1,47 +1,67 @@
 package com.oops.inheritance;
 
 public class Student extends Person {
-	private static int nextId;
-
+	private static int idGenerator;
 	private int id;
-	private double totalMarks;
+
+	private double english;
+	private double hindi;
 
 	static {
-		nextId = 101;
+		idGenerator = 0;
 	}
 
+	// parameterized constructor
 	public Student(String name) {
-		super(name);
-		id = nextId++;
-		totalMarks = 0;
+		this(name, "Undefined");
 	}
 
-	public Student(String name, String city, String state) {
-		super(name, city, state);
-		id = nextId++;
-		totalMarks = 0;
+	// parameterized constructor
+	public Student(String name, String address) {
+		super(name, address);		// call parent class matching constructor
+		this.id = ++idGenerator;
+		this.english = 0;
+		this.hindi = 0;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", Name=" + getName() + ", Address=" + getAddress()
-				+ ", totalMarks=" + totalMarks + "]";
+		return "Student [id=" + id + ", name=" + getName() + ", address="
+				+ getAddress() + ", english=" + english + ", hindi=" + hindi + "]";
 	}
 
+	/**
+	 * @return total marks obtained by a student
+	 */
 	public double getTotalMarks() {
-		return totalMarks;
+		return this.hindi + this.english;
 	}
 
-	public void setTotalMarks(double totalMarks) {
-		this.totalMarks = totalMarks;
-	}
-
-	public static int getNextId() {
-		return nextId;
+	/**
+	 * @return average marks obtained by a student
+	 */
+	public double getAverage() {
+		return this.getTotalMarks() / 2.0;
 	}
 
 	public int getId() {
 		return id;
+	}
+
+	public double getEnglish() {
+		return english;
+	}
+
+	public void setEnglish(double english) {
+		this.english = english;
+	}
+
+	public double getHindi() {
+		return hindi;
+	}
+
+	public void setHindi(double hindi) {
+		this.hindi = hindi;
 	}
 
 }
