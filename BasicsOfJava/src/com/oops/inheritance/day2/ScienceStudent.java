@@ -7,16 +7,16 @@ public class ScienceStudent extends Student {
 	private double maths;
 
 	public ScienceStudent(String name) {
-		this(name, "Undefined");
+		this(name, "Undefined", "Undefined");
 	}
 
-	public ScienceStudent(String name, String address) {
-		super(name, address);
+	public ScienceStudent(String name, String city, String state) {
+		super(name, city, state);
 	}
 
 	@Override
 	public String toString() {
-		return "ScienceStudent [id=" + getId() + ", name=" + getName() + ", physics=" + physics + ", chemistry="
+		return "Science [id=" + getId() + ", name=" + getName() + ", physics=" + physics + ", chemistry="
 				+ chemistry + ", maths=" + maths + ", english=" + getEnglish() + ", hindi=" + getHindi() + ", total="
 				+ getTotalMarks() + ", avg=" + getAverage() + "]";
 	}

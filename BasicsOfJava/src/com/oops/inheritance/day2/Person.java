@@ -1,12 +1,21 @@
 package com.oops.inheritance.day2;
 
+// Object
+
 public class Person {
 	private String name;
-	private String address;
+//	private String address;
 
-	Person(String name, String address) {
+	private Address address;
+
+	Person(String name, String city, String address) {
 		this.name = name;
-		this.address = address;
+		this.address = new Address(city, address);
+	}
+
+	Person(String name) {
+		this.name = name;
+		this.address = new Address();
 	}
 
 	@Override
@@ -21,12 +30,20 @@ public class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+//	public String getCity() {
+//		return address.getCity();
+//	}
+//	
+//	public void setCity(String city) {
+//		this.address.setCity(city);
+//	}
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 }

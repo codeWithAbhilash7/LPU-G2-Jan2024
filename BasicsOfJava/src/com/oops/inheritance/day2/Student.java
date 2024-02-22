@@ -12,11 +12,11 @@ public class Student extends Person {
 	}
 
 	public Student(String name) {
-		this(name, "Undefined");
+		this(name, "Undefined", "Undefined");
 	}
 
-	public Student(String name, String address) {
-		super(name, address); // call parent class matching constructor
+	public Student(String name, String city, String state) {
+		super(name, city, state); // call parent class matching constructor
 		this.english = 0;
 		this.hindi = 0;
 		this.id = ++idGenerator;
@@ -64,6 +64,16 @@ public class Student extends Person {
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Student s = (Student) obj;
+		return s.id == this.id;
 	}
 
 }

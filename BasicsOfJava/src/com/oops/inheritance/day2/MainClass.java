@@ -4,31 +4,35 @@ public class MainClass {
 
 	public static void main(String[] args) {
 
-		Student[] student = new Student[2];
+		Student[] student = new Student[3];
 
-		student[0] = new Student("Sachin");
-//		student[0].setEnglish(98);
-//		student[0].setHindi(88);
-//
-		student[1] = new ScienceStudent("Veebha");
-//		student[1].setEnglish(75);
-//		student[1].setHindi(80);
-//		
-//		ScienceStudent temp = (ScienceStudent) student[1];
-//		temp.setChemistry(78);
-//		temp.setPhysics(82);
-//		temp.setMaths(76);
+		student[0] = new Arts("Sachin");
+		student[1] = new ScienceStudent("Veebha", "Pune", "MH");
+		student[2] = new ScienceStudent("Veebha");
+
+		System.out.println(student[0].getAddress());
+		System.out.println(student[1].getAddress());
+
+//		if(student[1].equals(student[2])) {
+//			System.out.println("Equal");
+//		} else {
+//			System.out.println("NOT Equal");
+//		}
 
 		for (int i = 0; i < student.length; i++) {
-			System.out.println("Setting marks for " + student[i].getName());
-			student[i].setEnglish(90);
-			student[i].setHindi(90);
+			// System.out.println("Setting marks for " + student[i].getName());
+			student[i].setEnglish((int) (Math.random() * (100 - 40 + 1) + 40));
+			student[i].setHindi((int) (Math.random() * (100 - 40 + 1) + 40));
 
 			if (student[i] instanceof ScienceStudent) {
 				ScienceStudent temp = (ScienceStudent) student[i];
-				temp.setChemistry(91);
-				temp.setPhysics(92);
-				temp.setMaths(93);
+				temp.setChemistry((int) (Math.random() * (100 - 40 + 1) + 40));
+				temp.setPhysics((int) (Math.random() * (100 - 40 + 1) + 40));
+				temp.setMaths((int) (Math.random() * (100 - 40 + 1) + 40));
+			} else if (student[i] instanceof Arts) {
+				Arts temp = (Arts) student[i];
+				temp.setHistory((int) (Math.random() * (100 - 40 + 1) + 40));
+				temp.setGeography((int) (Math.random() * (100 - 40 + 1) + 40));
 			}
 		}
 
