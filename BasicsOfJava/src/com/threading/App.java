@@ -1,4 +1,4 @@
-package com.threads;
+package com.threading;
 
 // way 1 - extend Thread class
 //class Print extends Thread {
@@ -65,7 +65,6 @@ public class App {
 
 		System.out.println("is Daemon = " + t1.isDaemon());
 		t1.setDaemon(true);
-		System.out.println("is Daemon = " + t1.isDaemon());
 		t1.start();
 
 		Thread.sleep(2500);
