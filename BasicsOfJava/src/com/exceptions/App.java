@@ -1,5 +1,8 @@
 package com.exceptions;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
@@ -16,7 +19,7 @@ public class App {
 			return;
 		}
 	}
-	
+
 	public static int divide(int no1, int no2) {
 		try {
 			return no1 / no2;
@@ -26,12 +29,13 @@ public class App {
 		return 0;
 	}
 
-	public static void main(String[] args) {
+	static void runtimeExceptions() {
 		// System.out.println(add(20, 10));
 		// add(5);
 
 		int no1 = 0;
 		int no2 = 0;
+
 		while (true) {
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Enter a number 1:: ");
@@ -50,9 +54,32 @@ public class App {
 //			} catch (Exception ex) {
 //				ex.printStackTrace();
 //			}
-			
+
 			divide(no1, no2);
 
+		}
+
+	}
+
+	static void openFile(String filePath) throws FileNotFoundException, IOException {
+		// open that file in reading mode
+		File file = new File(filePath);
+		if (!file.exists()) {
+			throw new FileNotFoundException("File does not exist");
+		}
+		throw new IOException("File does not exist");
+	}
+
+	public static void main(String[] args) {
+
+		// try with resources
+		try (Scanner sc = new Scanner(System.in)) {
+			openFile("file.txt");
+			sc.next();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
