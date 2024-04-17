@@ -1,6 +1,7 @@
 package com.collections.list.arraylist;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Demo {
 
@@ -12,23 +13,28 @@ public class Demo {
 //		System.out.println(numbers);
 //		remove();
 //		System.out.println(numbers);
-		
+
 //		System.out.println("element at index 2 = " + numbers.get(2));
 //		
 //		System.out.println("index of element 12 = " + numbers.indexOf((Integer)12));
 //		System.out.println("last index of element 12 = " + numbers.lastIndexOf((Integer)12));
-		
+
+//		System.out.println(numbers);
+//		numbers.set(2, 56);
+
 		System.out.println(numbers);
-		numbers.set(2, 56);
+		Collections.sort(numbers);
 		System.out.println(numbers);
+		System.out.println("Binary Search (87) = " + Collections.binarySearch(numbers, 87));
+		System.out.println("max = " + Collections.max(numbers));
 
 	}
 
 	static void remove() {
 		// numbers.clear();
-		
-		numbers.remove(2);	// remove by index
-		numbers.remove((Integer)68); // remove by element
+
+		numbers.remove(2); // remove by index
+		numbers.remove((Integer) 68); // remove by element
 	}
 
 	static void add() {
